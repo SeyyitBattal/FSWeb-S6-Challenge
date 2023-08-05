@@ -1,3 +1,6 @@
+body {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -6,3 +9,32 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+
+.karakter-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.myButton {
+  justify-content: space-between;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+  padding: 0.2rem;
+  color: white;
+  width: 50vw;
+  margin-top: 0.8rem;
+  cursor: pointer;
+}
+
+.birthYear {
+  text-align: center;
+  align-items: center;
+  padding: 0.3rem;
+  border: 2px solid black;
+  margin-left: 5rem;
+}

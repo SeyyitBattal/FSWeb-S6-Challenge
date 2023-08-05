@@ -1,23 +1,24 @@
 // Karakter bileşeniniz buraya gelecek
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+import React from "react";
 
-const Karakter = () => {
-  const [karakterListesi, setKarakterListesi] = useState();
+const Karakter = (props) => {
+  const { karakterListesi } = props;
 
-  useEffect(() => {
-    axios
-      .get("https://swapi.dev/api/people/")
-      .then(function (response) {
-        console.log("Gelen veri: ", response.data);
-        setKarakterListesi(response.data);
-      })
-      .catch(function (error) {
-        console.error("Veriyi çekmede hata var");
-        console.log(error);
-      });
-  }, []);
+  const tumKarakterler = karakterListesi.map((herBirKarakter) => (
+    <div className="container">
+      <button className="myButton">
+        <p>{herBirKarakter.name}</p>
+        <p className="birthYear">{herBirKarakter.birth_year}</p>
+      </button>
+    </div>
+  ));
+
+  return (
+    <div className="karakter-container">
+      <div>{tumKarakterler}</div>
+    </div>
+  );
 };
 
 export default Karakter;
